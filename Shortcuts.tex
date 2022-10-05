@@ -1,0 +1,168 @@
+% Begin/end Shortcuts
+\def\bcon{\begin{convention}} 
+\def\econ{\end{convention}}
+\def\bc{\begin{cora}}
+\def\ec{\end{cora}}
+\def\bcl{\begin{rema}}
+\def\ecl{\end{rema}}
+\def\bd{\begin{defa}}
+\def\ed{\end{defa}}
+\def\ben{\begin{enumerate}}
+\def\benr{\begin{enumerate}[label=(\roman*)]}
+\def\een{\end{enumerate}}
+\def\be{\begin{align}}
+\def\ee{\end{align}}
+\def\bse{\begin{align*}}
+\def\ese{\end{align*}}
+\def\bex{\begin{exma}}
+\def\eex{\end{exma}}
+\def\bexe{\begin{exercise}}
+\def\eexe{\end{exercise}}
+\def\bit{\begin{itemize}}
+\def\eit{\end{itemize}}
+\def\bl{\begin{lema}}
+\def\el{\end{lema}}
+\def\bnn{\begin{rema}}
+\def\enn{\end{rema}}
+\def\bn{\begin{note}}
+\def\en{\end{note}}
+\def\bp{\begin{lema}}
+\def\ep{\end{lema}}
+\def\bpo{\begin{postulate}}
+\def\epo{\end{postulate}}
+\def\bq{\begin{proof}}
+\def\eq{\end{proof}}
+\def\br{\begin{rema}}
+\def\er{\end{rema}}
+\def\bs{\begin{solution}}
+\def\es{\end{solution}}
+\def\btab{\begin{table}}
+\def\etab{\end{table}}
+\def\btb{\begin{tabular}}
+\def\etb{\end{tabular}}
+\def\bter{\begin{defa}}
+\def\eter{\end{defa}}
+\def\bt{\begin{thma}}
+\def\et{\end{thma}}
+\def\btik{\begin{tikzpicture}}
+\def\etik{\end{tikzpicture}}
+  \def\bi{\begin{IEEEeqnarray*}}
+  \def\ei{\end{IEEEeqnarray*}}
+    \def\ba{\begin{array}}
+  \def\ea{\end{array}}
+
+% Letter Shortcuts
+% Greek letters
+\def\a{\alpha}
+\def\b{\beta}
+\def\del{\delta}
+\def\g{\gamma}
+\def\l{\lambda}
+\def\n{\nabla}
+\def\sig{\sigma}
+%miscellaneous shortcuts
+
+\def\D{\mathrm{D}}
+\def\d{\mathrm{d}}
+\def\ds{\displaystyle}
+\def\e{\mathrm{e}}
+\def\eqv{\Leftrightarrow}
+\def\ic{\mathrm{i}}
+\def\img{\mathrm{im}}
+\def\imp{\Rightarrow}
+\def\iset{\cong_\mathrm{set}}
+\def\Mat{\mathrm{Mat}}
+\def\m{\mathrm{m}}
+\def\N{\mathbb{N}}
+\def\ol{\overline}
+\def\re{\Re\e}
+\def\S{\Sigma}
+\def\s{\sigma}
+\def\t{\text}
+\def\ua{\nearrow}
+\def\wto{\rightharpoonup}
+
+
+
+% Mathbb
+\def\b1{\mathbb{1}} % identity
+\def\C{\mathbb{C}} % complex numbers
+\def\F{\mathbb{F}}
+\def\N{\mathbb{N}} % Natural
+\def\Q{\mathbb{Q}} % Rational
+\def\R{\mathbb{R}} % Reals
+\def\Z{\mathbb{Z}} % Integers
+
+
+% Mathcal
+\def\cA{\mathcal{A}}
+\def\cB{\mathcal{B}}
+\def\cD{\mathcal{D}}
+\def\cF{\mathcal{F}}
+\def\cH{\mathcal{H}}
+\def\cI{\mathcal{I}}
+\def\cJ{\mathcal{J}}
+\def\cK{\mathcal{K}}
+\def\cL{\mathcal{L}}
+\def\cM{\mathcal{M}}
+\def\cN{\mathcal{N}}
+\def\cO{\mathcal{O}}
+\def\cP{\mathcal{P}}
+\def\cT{\mathcal{T}}
+
+
+
+
+% Boxes 
+\DeclareRobustCommand{\mybox}[2][colframe=blue!10!black,before skip=10pt]{%
+\begin{tcolorbox}[
+        breakable,
+        width=\dimexpr\textwidth\relax, 
+        boxsep=5pt,
+        arc=5pt,outer arc=5pt,
+        ]
+        #2
+\end{tcolorbox}
+}
+
+\def\bbox{\begin{tcolorbox}[colback=white!5,colframe=blue!75!black,title=Exercise]}
+\def\ebox{\end{tcolorbox}}
+
+
+\def\lacts{\vartriangleright}
+\def\racts{\vartriangleleft}
+\def\smallblackbox{\mathbin{\raisebox{0.6pt}{\scalebox{0.55}{$\blacksquare$}}}}
+
+\def\Riem{\mathrm{Riem}}
+
+
+
+
+
+
+% \DeclareFontEncoding{LS1}{}{}
+% \DeclareFontSubstitution{LS1}{stix}{m}{n}
+% \DeclareSymbolFont{symbols3}{LS1}{stixbb}{m}{n}
+% \SetSymbolFont{symbols3}{bold}{LS1}{stixbb}{b}{n}
+% \DeclareMathSymbol{\Wedge}{\mathbin}{symbols3}{"A3}
+
+\newcommand{\halfWedge}{\mathbin{%
+\begin{tikzpicture}%
+\draw[line cap=round,rounded corners=0.15,line width=0.4pt] (0,0) -- (0.65ex,1.4ex) -- (1.3ex,0ex);%
+\draw[line cap=round,rounded corners=0.1,line width=0.4pt] (0.3ex,0) -- (0.78ex,1.05ex);%
+\end{tikzpicture}}%
+}
+\newcommand{\Wedge}{\mathbin{%
+\begin{tikzpicture}%
+\draw[line cap=round,rounded corners=0.1,line width=0.4pt] (0,0) -- (0.65ex,1.4ex) -- (1.3ex,0ex);%
+\draw[line cap=round,rounded corners=0.25,line width=0.4pt] (0.3ex,0) -- (0.65ex,0.78ex) -- (1ex,0);%
+\end{tikzpicture}}%
+}
+
+
+ \def\bse{\begin{equation*}}
+  \def\ese{\end{equation*}}
+   \def\btab{\begin{table}}
+  \def\etab{\end{table}}
+  \def\btb{\begin{tabular}}
+  \def\etb{\end{tabular}}

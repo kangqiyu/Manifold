@@ -1,0 +1,293 @@
+% \documentclass[a4paper,10pt]{article} % or whatever
+% \documentclass[letterpaper,10pt]{article} % or whatever
+\documentclass{article}
+
+% if you need to pass options to natbib, use, e.g.:
+     \PassOptionsToPackage{numbers, compress}{natbib}
+
+\usepackage[preprint]{neurips_2021}
+\usepackage{soul}
+
+\newcommand{\ignore}[1]{}
+% to avoid loading the natbib package, add option nonatbib:
+\usepackage{dsfont}
+\input{preamble}
+\usepackage{bbding}
+\usepackage{tikz,pgfplots}
+% \usetikzlibrary{patterns}
+\usetikzlibrary{shapes.geometric, arrows, patterns,calc}
+%  \usepackage{subfigure} 
+\pdfminorversion=7
+\usepackage{adjustbox}
+%\floatname{algorithm}{Procedure}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\newcommand{\bsl}[1]{\boldsymbol{#1}}
+\newcommand{\one}[1]{\norm{#1}_{1}}
+\newcommand{\bfs}[1]{\textbf{({#1}) }}
+\newcommand{\typss}{\mathcal{P}_n}
+\newcommand{\wrt}{\gls{wrt} }
+
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+    \node[shape=circle, draw, inner sep=0.1pt, 
+        minimum height=5pt] (char) {\vphantom{1g}#1};}}
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage{microtype}      % microtypography
+
+\title{Symplectic Manifold:}
+\usepackage{titlesec}
+\usepackage{IEEEtrantools}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\crefname{paragraph}{section}{sections}
+% \makeatletter
+% \newcommand\paragraph{\@startsection{paragraph}{4}{\z@}{-2.5ex\@plus -1ex \@minus -.25ex}{1.25ex \@plus .25ex}{\normalfont\normalsize\bfseries}}
+% \newcommand\subparagraph{\@startsection{subparagraph}{5}{\z@}{-2.5ex\@plus -1ex \@minus -.25ex}{1.25ex \@plus .25ex}{\normalfont\normalsize\bfseries}}
+% \makeatother
+\usepackage{cancel}
+\newcommand\Ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
+
+\usepackage{amsmath}
+\usepackage{pifont}
+\newcommand{\cmark}{\text{\ding{51}}}
+\newcommand{\xmark}{\text{\ding{55}}}
+\newcommand{\gp}{\operatorname{gp}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\Stab}{\operatorname{Stab}}
+\newcommand{\Orb}{\operatorname{Orb}}
+\newcommand{\HCF}{\operatorname{HCF}}
+\newcommand{\LCM}{\operatorname{LCM}}
+\newcommand{\Alt}{\operatorname{Alt}}
+\newcommand{\Isom}{\operatorname{Isom}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\Conj}{\operatorname{Conj}}
+\newcommand{\Conv}{\operatorname{Conv}}
+\newcommand{\cl}{:\text{ }}
+\newcommand{\ri}{\operatorname{ri}}
+\newcommand{\inte}{\operatorname{int}}
+\newcommand{\Aff}{\operatorname{Aff}}
+\newcommand{\Cone}{\operatorname{Cone}}
+\newcommand{\dom}{\operatorname{dom}}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\rb}{\partial_{\mathrm{ri}}}
+\newcommand{\Epi}{\operatorname{Epi} }
+% \newcommand{\Ima}{\operatorname{Im}}
+% \newcommand{\Id}{\operatorname{Id}}
+\begin{document}
+\input{Shortcuts.tex}
+\definecolor{lightergray}{rgb}{0.9,0.9,0.9}
+
+\maketitle
+
+
+
+\section{Introduction}
+\begin{enumerate}
+    \item \tb{symplectic manifold definition:} Let $M$ be a smooth manifold. A \tb{$2$-form} $\omega\in\Omega^2(M)$ is said to be a \tb{symplectic form} on $M$ if
+\begin{enumerate}
+    \item $\d \omega = 0$ and
+    \item it is \tb{non-degenerate}, i.e.\
+\bse
+(\forall \, Y\in \Gamma(TM) : \omega(X,Y) = 0) \Rightarrow X = 0.
+\ese
+\end{enumerate} 
+A manifold equipped with a symplectic form is called a \tb{symplectic manifold}.
+\begin{itemize}
+    \item \magenta{\tb{difference with Riemannian manifolds:} The metric tensor for Riemannian manifolds is \tb{symmetric}. So the key is nondegenerate bilinear forms that are \tb{symmetric vs. alternating.}} 
+    \item Because of non-degenerate, on a symplectic manifold $\mathcal{M}$, we can define an isomorphism between $T_x \mathcal{M}$ and $T_x^* \mathcal{M}$ by mapping a vector $V \in T_x \mathcal{M}$ to a 1-form $\eta_V \in T_x^* \mathcal{M}$, where
+\begin{align*}
+\eta_V(W)\coloneqq \omega^2(W, V)
+\end{align*}
+\end{itemize}
+
+\item \tb{Hamiltonian vector field $X_H$:} If we let $H: \mathcal{M} \to \mathbb{R}$ be a smooth function, then $\d H$ is a differential 1-form on $\mathcal{M}$. For every $x \in \mathcal{M}, \d H_x$ is then associated with a vector in $T_x \mathcal{M}$. We get the \tb{Hamiltonian vector field $X_H$ associated to the Hamiltonian function $H$}, which satisfies that
+\begin{align*}
+\omega^2\left(\cdot, X_H(x)\right)=\d H_x .
+\end{align*}
+\begin{itemize}
+    \item \tb{vector field induced from the Riemannian metric:} Similarly to the definition of $\eta: T_x \mathcal{M} \longrightarrow T_x^* \mathcal{M}$, if we let $\mathcal{M}$ be a Riemannian manifold, we can define another isomorphism using \tb{metric form $g$}:
+\begin{align*}
+\begin{aligned}
+\alpha_g: T \mathcal{M} & \longrightarrow T^* \mathcal{M} \\
+(p, V) & \longmapsto(p, g(V,-)) .
+\end{aligned}
+\end{align*}
+In local coordinates, $\alpha_g=g_{i j}$ and its inverse $\alpha_g^{-1}=g^{i j}$.
+\end{itemize}
+
+\item Supposing that $M$ is compact, or at least that $X_H$ is complete, let $\rho_t: M \rightarrow M, t \in \mathbb{R}$, be the one-parameter family of diffeomorphisms generated by $X_H$., i.e.,
+$$\frac{d \rho_t}{d t}=X_H (\rho_t) $$
+\tb{Claim:} \cyan{Each diffeomorphism $\rho_t$ preserves $\omega$, i.e., $\rho_t^* \omega=\omega, \forall t$.}
+
+{\tiny Proof. We have $\frac{d}{d t} \rho_t^* \omega=\rho_t^* \mathcal{L}_{X_H} \omega=\rho_t^*(d \underbrace{l_{X_H} \omega}_{d H}+l_{X_H} \underbrace{d \omega}_0)=0$.}
+
+
+
+
+\item \tb{cogeodesic orbit:} Take a break away from symplectic, we now give one concept on  Riemannian manifold.
+\begin{enumerate}
+    \item \tb{lifted curve on $T \mathcal{M}$:} A geodesic $\gamma$ in Riemannian manifold $\mathcal{M}$ parametrised by constant speed has a \tb{unique  lift}  $\dot{\gamma}$ to a curve in $T \mathcal{M}$. Some time we call it the  \tb{geodesic orbit (or flow)}.
+    \item The corresponding induced curve from metric $g$ in $T^* \mathcal{M}$ 
+\begin{align*}
+\alpha_{g} \circ \dot{\gamma}: I \longrightarrow T^* \mathcal{M}
+\end{align*}
+is called the \tb{cogeodesic orbit}.
+\end{enumerate}
+
+\begin{itemize}
+    \item Note $\dot{\gamma(t)}\in T_{\gamma(t)}\calM$, so the  \tb{unique (horizontal) lift}  $\dot{\gamma}$ is indeed a curve in $T \mathcal{M}$. So the projection of \tb{geodesic orbit} to $\calM$ is the \tb{geodesic line}!
+    \item Compare:
+    \begin{itemize}[$\ast$]
+        \item \tb{Geodesic orbit} is on the tangent bundle $T\calM$. 
+        \item \tb{Geodesic lines} on the manifold $\calM$. 
+        \item \tb{Cogeodesic orbit} is on the cotanget bundle $T^*\calM$.
+    \end{itemize} 
+\end{itemize}
+\end{enumerate}
+
+
+
+
+\section{relation between geodesic and Hamilton}
+The   cotangent bundle is a symplectic manifold. We then 
+\begin{enumerate}
+    \item \tb{cotangent bundle:} The cotangent bundle $T^*\calM$ of a $n$-dimensional manifold $\mathcal{M}$ is itself a $2 n$-dimensional manifold.
+    \item \tb{symplectic structure on $T^* \mathcal{M}$:}
+ Since $T^* \mathcal{M}$ is a vector bundle, it has a projection $\pi: T^* \mathcal{M} \to$ $\mathcal{M}$:
+\bse
+\begin{tikzcd}
+T^*\mathcal{M} \arrow[d, "\pi"'] \\
+\mathcal{M}                     
+\end{tikzcd}
+\ese
+\begin{align*}
+    \pi(q,p) = q
+\end{align*}
+Let $V \in T_{(q, p)}\left(T^* \mathcal{M}\right)$ be a vector tangent to the cotangent bundle at a point $(q, p) \in T^* \mathcal{M}$. Since $p \in T_q^* \mathcal{M}$, we can define the 1-form
+\begin{align*}
+\theta^1(V)=\left(\pi^* p\right)(V)
+\end{align*}
+on $T^*_{(q, p)}\left(T^{*} \mathcal{M}\right)$. We then define our symplectic form as
+
+\begin{align*}
+\omega^2=\d \theta^1 .
+\end{align*}
+\item \tb{local representation of the symplectic $\omega^2$:}
+If we let $\left(q^1, \ldots, q^n\right)$ be local chart coordinates of $\mathcal{M}$, and $\left(q^1, \ldots, q^n, p_1, \ldots, p_n\right)$ the induced coordinates $T^* \mathcal{M}$ from $\left\{\left(\d q^1\right),\ldots,\left(\d q^{n}\right)\right\}$. 
+If we assume the form of $p$ is
+\begin{align*}
+    p= p_i \d q^i,
+\end{align*}
+we then have the pull-back of $\pi^* p$ as 
+\begin{align*}
+    \pi^* p = p_i \d q^i.
+\end{align*}
+
+Therefore, we have 
+\begin{align*}
+    \omega^2 = \d \theta^1 = \d(p_i \d q^i) =  \d p_i \wedge \d q^i
+\end{align*}
+
+\item \tb{Hamiltonian orbit: flow generated from the vector field $X_H$  on $T^* \mathcal{M}$:} The flow generated by the vector filed $X_H$ 
+$$\dot{\gamma}=X_H(\gamma)$$
+is defined by the ordinary differential equation $\dot{x}=X_H(x)$, given in local coordinates $(q, p)$ by
+\begin{align*}
+\dot{q}^i=\frac{\partial H}{\partial p_i}, \dot{p}_i=-\frac{\partial H}{\partial q^i} .
+\end{align*}
+It is called \tb{Hamiltonian orbit of $H$}.
+\begin{itemize}
+    \item Note the curve of $\gamma$ is nothing but $\rho_t$ starting at some point.
+\end{itemize}
+
+{\tiny Proof. Let $(q, p)$ be our local coordinates of $T^* \mathcal{M}$. Let $H=H(q, p)$ be a Hamiltonian on $T^* \mathcal{M}, \omega^2=d p_i \wedge d q^i$ the symplectic form on $T^* \mathcal{M}$, and $X_H=$ $A^i \frac{\partial}{\partial q^i}+B_i \frac{\partial}{\partial p_i}$ the Hamiltonian vector field. Then
+\begin{align*}
+\omega^2\left(\cdot, X_H\right)=d p_i \wedge d q^i\left(\cdot, A^i \frac{\partial}{\partial q^i}+B_i \frac{\partial}{\partial p_i}\right)=A^i d p_i-B_i d q^i
+\end{align*}
+
+Moreover,
+\begin{align*}
+\d H=\frac{\partial H}{\partial q^i} d q^i+\frac{\partial H}{\partial p_i} d p_i
+\end{align*}
+which gives us that $X_H=\frac{\partial H}{\partial p_i} \frac{\partial}{\partial q^i}-\frac{\partial H}{\partial q^i} \frac{\partial}{\partial p_i}$. Hence
+\begin{align*}
+\dot{x}=X_H(x) \Longleftrightarrow \dot{q}^i=\frac{\partial H}{\partial p_i}, \dot{p}_i=-\frac{\partial H}{\partial q^i} .
+\end{align*}
+
+}
+
+\item \tb{cogeodesic orbits are equal to the Hamiltonian orbits of $H$:} Let $(\mathcal{M}, g)$ be a Riemannian manifold. Let $(q, p)$ be local coordinates of $T^* \mathcal{M}$ and $H(q, p)=\frac{1}{2} g^{i j}(q) p_i p_j$ be our Hamiltonian.  Recall that the Hamiltonian orbits are given by the solutions of the ordinary differential equation $\dot{\gamma}=X_H(\gamma)$, which in local coordinates are given by
+\begin{align*}
+\begin{aligned}
+\dot{q}^i &=\frac{\partial H}{\partial p_i}=g^{i j} p_j, \\
+\dot{p}_i &=-\frac{\partial H}{\partial q^i}=-\frac{1}{2} g_{, i}^{j k} p_j p_k .
+\end{aligned}
+\end{align*}
+Then the \tb{cogeodesic orbits are equal to the Hamiltonian orbits of $H$.}
+
+\begin{itemize}
+    \item  Note, for \tb{any} $H$, we have
+\begin{align*}
+\d H\left(X_H\right)=\omega^2\left(X_H, X_H\right)=0
+\end{align*}
+implies that \green{hamiltonian vector fields preserve their hamiltonian functions}. In case the the above $H$, we have that \cyan{along orbits of the cogeodesic flow, the Hamiltonian is constant}. Thus, the cogeodesic flow maps the set $$E_\lambda=\left\{(q, p) \in T^* \mathcal{M}: H(q, p)=\lambda\right\}$$
+\tb{onto itself}, for all $\lambda \geq 0 . E_\lambda$ is called a \tb{level set of constant energy $\lambda$.}
+
+\begin{itemize}[$\ast$]
+    \item We can define a volume element on a symplectic manifold $\left(\mathcal{M}, \omega^2\right)$ by exterior multiplication on the symplectic structure $n$ times:
+\begin{align*}
+\left(\omega^2\right)^n:=\underbrace{\omega^2 \wedge \cdots \wedge \omega^2}_{n \text { times }} .
+\end{align*}
+We get a nonvanishing $2 n$-form on $\mathcal{M}$, where $\operatorname{dim} \mathcal{M}=2 n$, i.e. a volume form.
+\tb{Claim:} We have that the $\rho_t$ (including the above Hamiltonian orbit $\gamma(t)$) preserves the volume defined by the symplectic structure.
+\end{itemize}
+\end{itemize}
+
+{\tiny 
+Proof. From the first equation
+\begin{align*}
+\begin{aligned}
+\ddot{q}^i &=g^{i j} \dot{p}_j+g_{, k}^{i j} \dot{q}^k p_j \\
+&=g^{i j} \dot{p}_j+g_{, k}^{i j} \dot{q}^k g_{j l} \dot{q}^l
+\end{aligned}
+\end{align*}
+and with the second equation, then
+\begin{align*}
+\begin{gathered}
+\ddot{q}^i=-\frac{1}{2} g^{i j} g_{, j}^{l k} p_l p_k+g_{, k}^{i j} g_{i l} \dot{q}^k \dot{q}^l \\
+=\frac{1}{2} g^{i j} g^{l m} g_{m n, j} g^{n k} g_{l r} \dot{q}^r g_{k s} \dot{q}^s+g^{i m} g_{m n, k} g^{n j} g_{j l} \dot{q}^k \dot{q}^l \\
+\text { using } g_{, l}^{i j}=-g^{i m} g_{m n, l} g^{n j} \\
+=\frac{1}{2} g^{i j} g_{m n, j} \dot{q}^m \dot{q}^n-g^{i m} g_{m n, k} \dot{q}^k \dot{q}^n \\
+=\frac{1}{2} g^{i j}\left(g_{m n, j}-g_{j n, m}-g_{j m, n}\right) \dot{q}^m \dot{q}^n
+\end{gathered}
+\end{align*}
+since $g_{m n, k} \dot{q}^k \dot{q}^n=\frac{1}{2} g_{m n, k} \dot{q}^k \dot{q}^n+\frac{1}{2} g_{m k, n} \dot{q}^k \dot{q}^n$, and after renumbering some indices,
+\begin{align*}
+=-\Gamma_{m n}^i \dot{q}^m \dot{q}^n .
+\end{align*}
+We have seen that $\gamma(t)=q(t)$ is a \tb{geodesic line} in $\mathcal{M}$ parametrized with constant speed. Since $p(t)=\alpha_g \circ \dot{\gamma}$, it follows that the \tb{cogeodesic orbit} is the Hamiltonian orbit as claimed.
+}
+
+\item \tb{one interesting phenomenon:} We first introduce the \tb{Poincaré recurrence theorem}: Let $D$ be a bounded set. Let $g$ be a volume preserving continuous one-to-one mapping such that $g D=D$. Then, in any neighbourhood $U$ of any point of $D$, there is a point $x \in U$ which returns to $U$, i.e. $g^n x \in U$ for some $n>0$.
+
+\begin{itemize}
+    \item If $\mathcal{M}$ is compact, then so is $E_\lambda$. Hence, for compact manifolds, the \tb{Poincaré recurrence theorem} applies to $E_\lambda$. This means that, while we cannot be sure that a point in $E_\lambda$ will be mapped exactly to itself after some iteration of the Hamiltonian flow, we know that it may be mapped \tb{arbitrarily close to itself}.
+
+\end{itemize}
+
+
+\end{enumerate}
+
+ 
+
+
+% \newpage
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,StringDefinitions,adv_dnn}
+\end{document}
