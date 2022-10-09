@@ -88,11 +88,11 @@
 
 \begin{figure}[H]
     \centering
-   \vspace{-1cm}
+   \vspace{-2.5cm}
 
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 
-\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-0.5,xscale=0.5]
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-0.7,xscale=0.7]
 %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
 
 %Flowchart: Connector [id:dp7858938493334904] 
@@ -103,19 +103,16 @@
 \draw   (181.25,198.04) .. controls (181.25,146.7) and (224.09,105.08) .. (276.94,105.08) .. controls (329.79,105.08) and (372.63,146.7) .. (372.63,198.04) .. controls (372.63,249.38) and (329.79,291) .. (276.94,291) .. controls (224.09,291) and (181.25,249.38) .. (181.25,198.04) -- cycle ;
 
 % Text Node
-\draw (244.58,114.28) node [anchor=north west][inner sep=0.75pt]  [font=\tiny] [align=left] {Differential\\Geometry};
+\draw (249.58,114.28) node [anchor=north west][inner sep=0.75pt]  [font=\tiny] [align=left] {Differential\\Geometry};
 % Text Node
 \draw (164.75,81.5) node [anchor=north west][inner sep=0.75pt]  [font=\tiny]  [align=left] {Analysis};
 % Text Node
 \draw (341.75,81.5) node [anchor=north west][inner sep=0.75pt]  [font=\tiny]  [align=left] {Algebra};
 % Text Node
 \draw (250.25,207.5) node [anchor=north west][inner sep=0.75pt]  [font=\tiny]  [align=left] {Geometry};
-
-
 \end{tikzpicture}
-
 \end{figure}
-
+\vspace{-2cm}
 \section{Introduction}
 Theoretical physics is all about casting our concepts about the real world into rigorous mathematical form, for better or worse. 
 It does so in order to fully explore the implications of what our concepts about the real world are. While from the point of view of logic and mathematics $A\Leftrightarrow B$ may be a tautology, psychologically, in terms of our understanding of $A$, it may be very useful to have a reformulation of $A$ in terms of $B$. With the understanding that mathematics just gives us a language for what we want to do, the idea of this course is to \tb{provide proper language, namely differential geometry, for theoretical physics}. In particular, we will provide the proper mathematical language for classical mechanics, electromagnetism, quantum mechanics and statistical physics.
@@ -724,7 +721,7 @@ $M / \sim $ is then equipped with the \tb{final (finest) topology}\footnote{Thin
 }
     
     {\tiny
-    In particular, open subsets of $X$ that are not saturated have no impact on whether or not the function $f$ is a quotient map; non-saturated subsets are irrelevant to the definition of "quotient map" just as they are irrelevant to the open-set definition of continuity (because a function $f: X \rightarrow Y$ is continuous if and only if for every saturated subset $S$ of $X, f(S)$ being open in $f(X)$ implies $S$ is open in $X$ ). Indeed, if $\tau$ is a topology on $X$ and $f: X \rightarrow Y$ is any map then set $\tau_{f}$ of all $U \in \tau$ that are saturated subsets of $X$ forms a topology on $X$. If $Y$ is also a topological space then $f:(X, \tau) \rightarrow Y$ is a quotient map (respectively, continuous) if and only if the same is true of $f:\left(X, \tau_{f}\right) \rightarrow Y$.} \tb{Continuous open surjection map} is therefore a quotient map.
+    In particular, open subsets of $X$ that are not saturated have no impact on whether or not the function $f$ is a quotient map; non-saturated subsets are irrelevant to the definition of "quotient map" just as they are irrelevant to the open-set definition of continuity (because a function $f: X \rightarrow Y$ is continuous if and only if for every saturated subset $S$ of $X, f(S)$ being open in $f(X)$ implies $S$ is open in $X$ ). Indeed, if $\tau$ is a topology on $X$ and $f: X \rightarrow Y$ is any map then set $\tau_{f}$ of all $U \in \tau$ that are open saturated subsets of $X$ forms a topology on $X$. If $Y$ is also a topological space then $f:(X, \tau) \rightarrow Y$ is a quotient map (respectively, continuous) if and only if the same is true of $f:\left(X, \tau_{f}\right) \rightarrow Y$.} \tb{Continuous open surjection map} is therefore a quotient map.
     \item Every surjection induces an equivalence relation. Rougly speaking, if the surjection  is equipped with the final topology for $Y$, we get a quotient topology on $Y$. (Strictly speaking, we need to distinguish singleton set and its unique element. See wiki.)
 \end{itemize}
 \item Example: let $\sim$ be the equivalence relation on $\mathbb{R}$ defined by:
