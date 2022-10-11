@@ -115,9 +115,9 @@
 \vspace{-2cm}
 \section{Introduction}
 Theoretical physics is all about casting our concepts about the real world into rigorous mathematical form, for better or worse. 
-It does so in order to fully explore the implications of what our concepts about the real world are. While from the point of view of logic and mathematics $A\Leftrightarrow B$ may be a tautology, psychologically, in terms of our understanding of $A$, it may be very useful to have a reformulation of $A$ in terms of $B$. With the understanding that mathematics just gives us a language for what we want to do, the idea of this course is to \tb{provide proper language, namely differential geometry, for theoretical physics}. In particular, we will provide the proper mathematical language for classical mechanics, electromagnetism, quantum mechanics and statistical physics.
+It does so in order to fully explore the implications of our concepts about the real world. While from the point of view of logic and mathematics $A\Leftrightarrow B$ may be a tautology, psychologically, in terms of our understanding of $A$, it may be very useful to have a reformulation of $A$ in terms of $B$. With the understanding that mathematics just gives us a language for what we want to do, the idea of this course is to \tb{provide proper language, namely differential geometry, for theoretical physics}. In particular, we will provide the proper mathematical language for classical mechanics, electromagnetism, quantum mechanics, and statistical physics.
 
-In the notes,  I roughly use \magenta{magenta} to highlight very important concepts, \orange{orange} to highlight important concepts, and other color like \cyan{cyan}, \green{green} and \purple{purple} for other highlights. Note, the text highlighted using same color (except \cyan{cyan} which is used everywhere) used in one section may have some correspondence relation. The colors are not used randomly. The importance is judged just from my personal perspective. Please modify them freely according your own knowledge base since for example you may be not familiar with some concepts that I am familiar with. Unimportant pars are in tiny font size. 
+In the notes,  I roughly use \magenta{magenta} to highlight very important concepts, \orange{orange} to highlight important concepts, and other color like \cyan{cyan}, \green{green} and \purple{purple} for other highlights. Note, the text highlighted using the same color (except \cyan{cyan} which is used everywhere) used in one section may have some correspondence relation. The colors are not used randomly. The importance is judged just from my personal perspective. Please modify them freely according to your own knowledge base since, for example, you may not be familiar with some concepts that I am familiar with. Unimportant parts are in tiny font sizes. 
 
 Course structure:
 \begin{figure}[H]
@@ -207,7 +207,7 @@ Course structure:
 For example, we might translate the English sentence, "If you're telling the truth then I'm a monkey's uncle," by the formula $(V \rightarrow M)$. We assign this formula the value $T$ whenever you are fibbing. In assigning the value $T$, we are certainly not assigning any causal connection between your veracity and any simian features of my nephews or nieces. The sentence in question is a conditional statement. It makes an assertion about my relatives provided a certain condition - that you are telling the truth - is met. Whenever that condition fails, the statement is \emph{vacuously true}.
 
 Very roughly, we can think of a conditional formula $(p \rightarrow q)$ as expressing a \tb{promise} that if a certain condition is met (viz., that $p$ is true), then $q$ is true. If the condition $p$ turns out not to be met, then the \tb{promise stands unbroken}, regardless of $q$.
-\item \cyan{"implies" means the same as "subset" in set theory}: the empty set is a subset of any set, a false statement implies any statement.
+\item \cyan{"implies" means the same as "subset" in set theory}: the empty set is a subset of any set, and a false statement implies any statement.
         \end{enumerate}
     \end{itemize}
     \item \tb{predicate logic:} A predicate is (informally) a proposition-valued function of some variable or variables. In particular, a predicate of two variables is called a \tb{relation}. 
@@ -249,9 +249,9 @@ and we read ``$a_1,a_2,\ldots,a_N$ proves $p$''.
 \item Some important remarks:
 \begin{itemize}[$\ast$]
 \item Proof is try to construct a sequence such that  ``$\left(A_{1} \wedge \cdots \wedge A_{n}\right) \Rightarrow B$ is tautology'' is then shown where $A_i$ are the axioms (or definitions, assumptions).
-\item Note, Modus Ponens is  just a Tautology in the form of $P \Rightarrow Q$. So in some sense, proof is just  \tb{a sequences of tautologies}. And proof is the flow of ``true'' from the start to the
+\item Note, Modus Ponens is  just a Tautology in the form of $P \Rightarrow Q$. So in some sense, proof is just  \tb{a sequence of tautologies}. And proof is the flow of ``true'' from the start to the
 end as discussed in the notes.
-    \item If no givens are from hypotheses (axioms), we can only prove a tautology $B$ (something that is always true). This is because for $p\Rightarrow q$, we know only have tautology $p$, so $q$ must be tautology.
+    \item If no givens are from hypotheses (axioms), we can only prove a tautology $B$ (something that is always true). This is because for $p\Rightarrow q$, we know only have tautology $p$, so $q$ must be a tautology.
     \item An axiomatic system is \tb{consistent} if there exists a proposition $q$ which cannot be proven from the axioms.
     \item Any axiomatic system powerful enough to encode elementary arithmetic is either inconsistent or contains an undecidable proposition, i.e. a proposition that can be neither proven nor disproven within the system. See the screenshots.
 \end{itemize}
@@ -277,8 +277,8 @@ Zermelo-Fraenkel axioms:
 \forall x: \forall y:(x \in y) \underline{\vee} \neg(x \in y)
 \end{align*}
     \begin{itemize}
-        \item $x \in y$ is a relation. There is no concept of element here. All variable considered here are set. But if $x \in y$, we may now call $x$ is an \tb{element} of $y$ in human language.
-        \item \tb{Russell’s paradox:} if $u$ contains all the sets that are not elements of themselves, and no others. $u$ is not a set. \tb{So there is no universal set.}
+        \item $x \in y$ is a relation. There is no concept of element here. All variables considered here are set. But if $x \in y$, we may now call $x$ is an \tb{element} of $y$ in human language.
+        \item \tb{Russell’s paradox:} if $u$ contains all the sets that are not elements of themselves and no others. $u$ is not a set. \tb{So there is no universal set.}
     \end{itemize}
     \item \tb{``E'': axiom on the existence of an empty set:} There exists a set that contains no elements. In symbols:
 \begin{align*}
@@ -291,7 +291,7 @@ Zermelo-Fraenkel axioms:
 \begin{align*}
 \forall x: \forall y: \exists m: \forall u:(u \in m \Leftrightarrow(u=x \vee u=y)) .
 \end{align*}
-The set $m$ is called the pair set of $x$ and $y$ and it is denoted by $\{x, y\}$.
+The set $m$ is called the pair set of $x$ and $y$, and it is denoted by $\{x, y\}$.
 \begin{itemize}
     \item We can show $\{x, y\} = \{y, x\}$, so it is an \tb{unordered} pair.
 \item The defining property of an ordered pair is the following:
@@ -299,10 +299,10 @@ The set $m$ is called the pair set of $x$ and $y$ and it is denoted by $\{x, y\}
 (x, y)=(a, b) \Leftrightarrow x=a \wedge y=b .
 \end{align*}
 One candidate which satisfies this property is $(x, y):=\{x,\{x, y\}\}$, which is a set by the axiom on pair sets.
-\item  If $x$ is a set, then we can define $\{x\}\coloneqq\{x, x\}$,  called singleton set. 
+\item  If $x$ is a set, then we can define $\{x\}\coloneqq\{x, x\}$,  called a \tb{singleton set}. 
 \item Note, up to now, we cannot define $\{x,y,z\}$ three-element set. We need the following axiom on union sets.
 \end{itemize}
-\item \tb{``U'' axiom on union sets:} Let $x$ be a set. Then there exists a set whose elements are precisely the elements of the elements of $x$. In symbols:
+\item \tb{``U'' axiom on union sets:} Let $x$ be a set. Then there exists a set whose elements are precisely the \emph{elements of the elements} of $x$. In symbols:
 \begin{align*}
 \forall x: \exists u: \forall y:(y \in u \Leftrightarrow \exists s:(y \in s \wedge s \in x))
 \end{align*}
@@ -313,16 +313,16 @@ The set $u$ is denoted by $\bigcup x$.
 \end{itemize}
 \item \tb{``R'' axiom of replacement:} Let $R$ be a \tb{functional relation} and let $m$ be a set. Then the \tb{image} of $m$ under $R$, denoted by $\operatorname{im}_{R}(m)$, is again a set.
 \begin{itemize}
-    \item Functional is just our traditional definition of function. Formally, a relation $R$ is said to be \tb{functional} if:
+    \item Functional is just our traditional definition of a function. Formally, a relation $R$ is said to be \tb{functional} if:
 \begin{align*}
-\forall x: \exists ! y: R(x, y) .
+\forall x: \exists ! y: R(x, y).
 \end{align*}
 \item Let $m$ be a set and let $R$ be a functional relation. The \tb{image} of $m$ under $R$ consists of all those $y$ for which there is an $x \in m$ such that $R(x, y)$.
 \item \tb{principle of restricted comprehension} (implied by ``R''): Let $P(x)$ be a \tb{predicate} and let $m$ be a set. Then the elements $y \in m$ such that $P(y)$ is true constitute a set, which we denote by:
 \begin{align*}
 \{y \in m \mid P(y)\} .
 \end{align*}
-Note, "principle" of \tb{universal} comprehension which states that $\{y \mid P(y)\}$ is a set for any predicate and was shown to be inconsistent by Russell. 
+Note, "principle" of \tb{universal} comprehension which states that $\{y \mid P(y)\}$ is a set for any predicate  was shown to be inconsistent by Russell. 
 \begin{itemize}[$\ast$]
 \item Observe that the $y \in m$ condition makes it so that $\{y \in m \mid P(y)\}$ cannot have more elements than $m$ itself.
     \item Now, we can define \tb{intersection:} Let $x$ be a set, the intersection of $x$ is
@@ -333,7 +333,7 @@ Note, "principle" of \tb{universal} comprehension which states that $\{y \mid P(
 \begin{align*}
 m \backslash u:=\{x \in m \mid x \notin u\} .
 \end{align*}
-These are both sets by the principle of restricted comprehension, which is ultimately due to axiom of replacement.
+These are both sets by the principle of restricted comprehension, which is ultimately due to the axiom of replacement.
 \end{itemize}
 
 
@@ -348,13 +348,13 @@ These are both sets by the principle of restricted comprehension, which is ultim
 \begin{align*}
 \mathcal{P}(m):=\{y \mid y \subseteq m\} .
 \end{align*}
-We therefore need a "bigger" (or biggest) set where the elements of the power set come from. However, this in not possible (See above) and there is no other choice but to dedicate an additional axiom for the existence of power sets.
+We therefore need a "bigger" (or biggest) set where the elements of the power set come from. However, this is not possible (See above) and there is no other choice but to dedicate an additional axiom for the existence of power sets.
 
     \item If one defines $(a, b):=\{a,\{a, b\}\}$, then the cartesian product $x \times y$ of two sets $x$ and $y$, which informally is the set of all ordered pairs of elements of $x$ and $y$, satisfies:
 \begin{align*}
 x \times y \subseteq \mathcal{P}(\mathcal{P}(\bigcup\{x, y\})) \text {. }
 \end{align*}
-Hence, the existence of $x \times y$ as a set follows from the axioms on unions, pair sets, power sets and the principle of restricted comprehension.
+Hence, the existence of $x \times y$ as a set follows from the axioms on unions, pair sets, power sets, and the principle of restricted comprehension.
 
 \end{itemize}
 \item \tb{``I'' axiom of infinity:} There exists a set that contains the empty set and, together with every other element $y$, it also contains the set $\{y\}$ as an element. In symbols:
@@ -376,7 +376,7 @@ With this formulation, the natural numbers look like:
 \begin{align*}
 \mathbb{N:}=\{\varnothing,\{\varnothing\},\{\varnothing,\{\varnothing\}\},\{\varnothing,\{\varnothing\},\{\varnothing,\{\varnothing\}\}\}, \ldots\}
 \end{align*}
-It is much nicer for two reasons. First, the natural number $n$ is represented by an $n$-element set rather than a one element set. Second, it generalizes much more naturally to the system of transfinite ordinal numbers where the successor operation $s(x)=x \cup\{x\}$ applies to transfinite ordinals as well as natural numbers (I don't know this, just ignore it currently). Moreover, the natural numbers have the same defining property as the ordinals: they are transitive sets strictly well-ordered by the $\in$-relation.
+It is much nicer for two reasons. First, the natural number $n$ is represented by an $n$-element set rather than a one-element set. Second, it generalizes much more naturally to the system of transfinite ordinal numbers where the successor operation $s(x)=x \cup\{x\}$ applies to transfinite ordinals as well as natural numbers (I don't know this, just ignore it currently). Moreover, the natural numbers have the same defining property as the ordinals: they are transitive sets strictly well-ordered by the $\in$-relation.
 \end{itemize}
 \item We can define $\mathbb{R:}=\mathcal{P}(\mathbb{N})$, which is a set by the axiom on power sets.
 \end{itemize}
@@ -387,7 +387,7 @@ It is much nicer for two reasons. First, the natural number $n$ is represented b
 \end{align*}
 where $P(x) \Leftrightarrow(\exists a: a \in x) \wedge(\forall a: \forall b:(a \in x \wedge b \in x) \Rightarrow \bigcap\{a, b\}=\varnothing)$.
 \begin{itemize}
-    \item The axiom of choice is independent of the other 8 axioms, which means that one could have set theory with or without the axiom of choice. However, standard mathematics uses the axiom of choice and hence so will we. There is a number of theorems that can only be proved by using the axiom of choice, like
+    \item The axiom of choice is independent of the other 8 axioms, which means that one could have a set theory with or without the axiom of choice. However, standard mathematics uses the axiom of choice, and hence so will we. There is a number of theorems that can only be proved by using the axiom of choice, like
     \begin{itemize}[$\ast$]
         \item every vector space has a basis;
         \item there exists a complete system of representatives of an equivalence relation.
@@ -439,9 +439,9 @@ For \magenta{manifold with bundle}, we also have other structures. In this secti
 
 A summary:
 \begin{itemize}[$\blacktriangleright$]
-\item We give definition of \tb{map}.
-\item We use map to \tb{classify sets} as finite and infinite.
-\item We introduce composition of maps and \tb{diagram commute}.
+\item We give the definition of \tb{map}.
+\item We use \tb{map} to \tb{classify sets} as finite and infinite.
+\item We introduce \tb{composition} of maps and \tb{diagram commute}.
 \item We define \tb{equivalence relations} and \tb{quotient set}.
 \item Finally we use equivalence to \tb{construct $\mathbb{N}, \mathbb{Z}, \mathbb{Q}$ and $\mathbb{R}$} step by step.
 \end{itemize}
@@ -462,7 +462,7 @@ a & \mapsto \phi(a)
 
 \item \tb{set isomorphic:} Two sets $A$ and $B$ are called (set-theoretic) isomorphic if there exists a \tb{bijection} $\phi: A \rightarrow B$. In this case, we write $A \cong_{\text {set }} B$.
 \begin{itemize}
-    \item If there is any bijection $A \rightarrow B$ then generally there are many. This is knowledge from permutation group.
+    \item If there is any bijection $A \rightarrow B$ then generally there are many. This is knowledge from the permutation group.
 \end{itemize}
 
 \item \tb{classification of sets:} A set $A$ is: 
@@ -566,7 +566,7 @@ n & \mapsto m \text { such that } m \in n .
 \end{align*}
 \begin{itemize}
     \item We can show that $+$ is commutative and associative.
-    \item The \tb{multiplication} can be defined similarly, we do not construct it here. But we will assume it can use it to construct $\bbZ$ and $\bbQ$.
+    \item The \tb{multiplication} can be defined similarly, we do not construct it here. But we will assume it can used to construct $\bbZ$ and $\bbQ$.
 \end{itemize}
 \item Let $\sim$ be the relation on $\mathbb{N} \times \mathbb{N}$ defined by:
 \begin{align*}
@@ -588,7 +588,7 @@ n & \mapsto[(n, 0)]
 [(m, n)]+_{\mathbb{Z}}[(p, q)]:=[(m+p, n+q)]
 \end{align*}
 \begin{itemize}
-    \item We can then define $\times$ on $\bbZ$ similary.
+    \item We can then define $\times$ on $\bbZ$ similarly.
 \end{itemize}
 \item In a similar fashion, we define the \tb{set of rational numbers} by:
 \begin{align*}
@@ -619,7 +619,7 @@ p & \mapsto[(p, 1)]
 \end{align*}
 where the operations of addition and multiplication that appear on the right hand sides are the ones defined on $\mathbb{Z}$. 
 
-\item  There are many ways to construct the reals from the rationals. One is to define a set $\mathscr{A}$ of \tb{almost homomorphisms}\footnote{Do not need to know. Personally, I do not know this concept, just copy paste. } on $\mathbb{Z}$ and hence define:
+\item  There are many ways to construct the reals from the rationals. One is to define a set $\mathscr{A}$ of \tb{almost homomorphisms}\footnote{Do not need to know in this course. Personally, I do not know this concept, just copy-paste.} on $\mathbb{Z}$ and hence define:
 \begin{align*}
 \mathbb{R:}=\mathscr{A} / \sim,
 \end{align*}
@@ -643,10 +643,10 @@ where $\sim$ is a "suitable" equivalence relation on $\mathscr{A}$.
 \end{tikzcd}
 }
 
-As we will see, a topology on a set provides the weakest structure in order to define the two very important notions of convergence of sequences to points in a set, and of continuity of maps between two sets. \cyan{Homeomorphism are the “structure-preserving” (i.e. topologically isomorphic) maps for topological spaces.}
+As we will see, a topology on a set provides the weakest structure in order to define the two very important notions of convergence of sequences to points in a set, and of continuity of maps between two sets. \cyan{Homeomorphism is the “structure-preserving” (i.e. topologically isomorphic) maps for topological spaces.}
 A summary:
 \begin{itemize}[$\blacktriangleright$]
-\item We give definition of \tb{topology}.
+\item We give the definition of \tb{topology}.
 \item We construct new topologies from given ones using \tb{induced (subset) topology}, \tb{quotient (finest, or called final) topology} and \tb{product (weak, or called initial) topology}.
 \item We define \tb{continuous map} and \tb{homeomorphism}.
 \end{itemize}
@@ -701,7 +701,7 @@ q: M \rightarrow M / \sim \\
 m \mapsto[m]
 \end{gathered}
 \end{align*}
-$M / \sim $ is then equipped with the \tb{final (finest) topology}\footnote{Think about why finest and coarest topology are dual. For $f:X\rightarrow Y$, to make it continuous: if we know topology on $X$, we then define the finest topology on $Y$ (the coarest one is trivial); if we know topology on $Y$, we then need the coarest topology on $X$} for $q$ (to make $q$ continuous):
+$M / \sim $ is then equipped with the \tb{final (finest) topology}\footnote{Think about why finest and coarsest topology are "dual". For $f:X\rightarrow Y$, to make it continuous: if we know topology on $X$, we then define the finest topology on $Y$ (the coarsest one is trivial); if we know topology on $Y$, we then need the coarsest topology on $X$} for $q$ (to make $q$ continuous):
 \begin{align*}
 \mathcal{O}_{M / \sim:}=\left\{U \subseteq M / \sim \mid \operatorname{preim}_{q}(U) \in \mathcal{O}\right\} .
 \end{align*}
@@ -722,7 +722,7 @@ $M / \sim $ is then equipped with the \tb{final (finest) topology}\footnote{Thin
     
     {\tiny
     In particular, open subsets of $X$ that are not saturated have no impact on whether or not the function $f$ is a quotient map; non-saturated subsets are irrelevant to the definition of "quotient map" just as they are irrelevant to the open-set definition of continuity (because a function $f: X \rightarrow Y$ is continuous if and only if for every saturated subset $S$ of $X, f(S)$ being open in $f(X)$ implies $S$ is open in $X$ ). Indeed, if $\tau$ is a topology on $X$ and $f: X \rightarrow Y$ is any map then set $\tau_{f}$ of all $U \in \tau$ that are open saturated subsets of $X$ forms a topology on $X$. If $Y$ is also a topological space then $f:(X, \tau) \rightarrow Y$ is a quotient map (respectively, continuous) if and only if the same is true of $f:\left(X, \tau_{f}\right) \rightarrow Y$.} \tb{Continuous open surjection map} is therefore a quotient map.
-    \item Every surjection induces an equivalence relation. Rougly speaking, if the surjection  is equipped with the final topology for $Y$, we get a quotient topology on $Y$. (Strictly speaking, we need to distinguish singleton set and its unique element. See wiki.)
+    \item Every surjection induces an equivalence relation. Roughly speaking, if the surjection  is equipped with the final topology for $Y$, we get a quotient topology on $Y$. (Strictly speaking, we need to distinguish the singleton set and its unique element. See wiki.)
 \end{itemize}
 \item Example: let $\sim$ be the equivalence relation on $\mathbb{R}$ defined by:
 \begin{align*}
@@ -732,7 +732,7 @@ Then the circle can be defined as the set $S^{1:}=\mathbb{R} / \sim$ equipped wi
 \end{itemize}
 \item \tb{product topology:}   it is \tb{coarsest topology} for which all the projections are continuous.
 \end{enumerate} 
-\item \tb{convergence:}  It has two nets based convergence and sequence based convergence. I omit them here. 
+\item \tb{convergence:}  It has two net-based convergence and sequence-based convergence. I omit them here. 
 \begin{itemize}
     \item Consider the topological space $(M, \mathcal{P}(M))$. Then only definitely constant sequences converge, where a sequence is definitely constant with value $c \in M$ if:
 \begin{align*}
@@ -758,16 +758,16 @@ This is immediate from the definition of convergence since in the discrete topol
 A property of a topological space is called an invariant if any two homeomorphic spaces share the property. A classification of topological spaces would be a list of topological invariants such that any two spaces which share these invariants are homeomorphic. As of now, \tb{no} such list is known. 
 A summary:
 \begin{itemize}[$\blacktriangleright$]
-\item We give definition of \tb{separation}.
+\item We give the definition of \tb{separation}.
 \item We give definitions of \tb{cover}, from which concepts like \tb{locally finite,  refinement, compactness and paracompactness} can be defined.
 \item Partition of unity (a set of continuous maps) can be defined using  \tb{locally finite cover}. Give an existing cover $C$, partition of unity is said to be subordinate if the set interiors of supports is a refinement of $C$.
 \item We then compare \tb{connected} and \tb{path-connected}.
-\item We give definition of \tb{homotopic} of curves which can be regarded as an \tb{equivalence relation} (able of continuously deformation between each other).
+\item We give the definition of \tb{homotopic} of curves which can be regarded as an \tb{equivalence relation} (able of continuously deformate between each other).
 \item Finally, we are able to give the definition of \tb{fundamental group},  a ``group-valued'' property of a topological space.
 \end{itemize}
 
 \begin{enumerate}
-    \item \tb{separation properties:} $T_1$, $T_2$, ... classification. It is complicated and each space has many useful properties. I choose to omit them here. Please see my topology notes.
+    \item \tb{separation properties:} $T_1$, $T_2$, ... classification. It is complicated, and each space has many useful properties. I choose to omit them here. Please see my topology notes.
     
     \item \tb{cover, compactness and paracompactness:} I'm familiar with compact and its properties. I choose to omit them.  Please see my topology notes. The following mainly focuses on others. \cyan{Paracompact is weaker than compact.}
     \begin{enumerate}
@@ -862,7 +862,7 @@ h(0, \lambda)=\gamma(\lambda) \quad \text { and } \quad h(1, \lambda)=\delta(\la
 \node at (2.5,-3.5) {$\delta$};
 \end{tikzpicture}
 \end{figure}
-\item \tb{fundamental \cyan{group}\footnote{If there exists a group isomorphism between $(G, \bullet)$ and $(H, \circ)$, we write $G\cong_{\operatorname{grp}} H$.}:} It is a group with element being equivalent loop and ``$+$'' being the concatenation.
+\item \tb{fundamental \cyan{group}\footnote{If there exists a group isomorphism between $(G, \bullet)$ and $(H, \circ)$, we write $G\cong_{\operatorname{grp}} H$.}:} It is a group with the element being the equivalent loop and ``$+$'' being the concatenation.
 \begin{itemize}
 \item All the previously discussed topological properties are ``boolean-valued'', i.e.\ a topological space is either connected or not connected, and so on. The fundamental group is a ``group-valued'' property.
     \item \tb{loop:}  Let $(M, \mathcal{O})$ be a topological space. Then, for every $p \in M$, we define the space of loops at $p$ by:
@@ -975,7 +975,7 @@ A summary:
 \item A \tb{bundle} consisting \tb{total manifold space},  \tb{base manifold space} and the \tb{projection operator}. 
 \item The concepts like \tb{fibre}, \tb{section}, \tb{sub-bundle}, \tb{bundle morphism} and \tb{locally trivial} are then given. 
 \item We then further define \tb{fibre bundle} which locally is a product bundle with a fixed fibre $F$ for all points.
-\item Finally, we view manifolds from \tb{local charts} and give definition of \tb{atlases}.
+\item Finally, we view manifolds from \tb{local charts} and give the definition of \tb{atlases}.
 \end{itemize}
 
 \begin{enumerate}
@@ -1032,7 +1032,7 @@ This ensures that the concept of \tb{dimension is indeed well-defined}, i.e. it 
 \end{itemize}
 \item \tb{bundle:}  A bundle (of topological manifolds) is a triple $(E, \pi, M)$ where $E$ and $M$ are topological manifolds called the \tb{total space} and the \tb{base space} respectively, and ${\pi}$ is a \cyan{\tb{continuous}, \tb{surjective}}\footnote{recall the quotient map, but here we do not use it until ``fibre bundle''} map $\pi: E \rightarrow M$ called the \tb{projection map}.
 \begin{itemize}
-\item Bundle can be defined for use general topological space without assuming $E$ and $M$ are manifold. But, in this course, we focus on manifold.
+\item Bundle can be defined for the general topological space without assuming $E$ and $M$ are manifold. But, in this course, we focus on manifold.
     \item \tb{notation:} We will often denote the bundle $(E, \pi, M)$ by $E \stackrel{\pi}{\rightarrow} M$.
     \item \tb{fibre:} Let $E \stackrel{\pi}{\rightarrow} M$ be a bundle and let $p \in M$. Then, $F_{p}:=\operatorname{preim}_{\pi}(\{p\})$ is called the fibre at the point $p$. However, $F_p$ may vary topologically from point to point.
    \item \tb{product bundle:} Let $M$ and $N$ be manifolds. Then, the triple $(M \times N, \pi, M)$, where:
@@ -1044,7 +1044,7 @@ This ensures that the concept of \tb{dimension is indeed well-defined}, i.e. it 
 \end{align*}
 is a \tb{bundle} since (one can easily check) $\pi$ is a \emph{continuous open surjective map}. Similarly, $(M \times N, \pi, N)$ with the appropriate $\pi$, is also a \tb{bundle}. Later we will see it is a \tb{fiber bundle}.
 \end{itemize}
-Intuitively, the fibre at the point $p \in M$ is a set of points in $E$ (represented below as a line) attached to the point $p$. The projection map sends all the points is the fibre $F_{p}$ to the point $p$.
+Intuitively, the fibre at the point $p \in M$ is a set of points in $E$ (represented below as a line) attached to the point $p$. The projection map sends all the points in the fibre $F_{p}$ to the point $p$.
 \begin{figure}[h!]
 \centering
 \begin{tikzpicture}[scale=0.5]
@@ -1093,7 +1093,7 @@ p & \mapsto(p, s(p))
 \end{aligned}
 \end{align*}
 where $s: M \rightarrow F$ is continuous map.
-\item Note, sections may \tb{not} exist due the requirement of \orange{continuous}. See below fiber bundles. 
+\item Note, sections may \tb{not} exist due the requirement of \orange{continuous}. See below fibre bundles. 
 % }
 \end{itemize}
 \item \tb{sub-bundle:} A \tb{sub-bundle} of a bundle $(E,\pi,M)$ is a triple $(E',\pi',M')$ where $E'\se E$ and $M'\se M$ are submanifolds and $\pi':=\pi|_{E'}$.
