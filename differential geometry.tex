@@ -5,7 +5,7 @@
 % if you need to pass options to natbib, use, e.g.:
      \PassOptionsToPackage{numbers, compress}{natbib}
 
-\usepackage[preprint]{neurips_2021}
+\usepackage[preprint]{notes}
 \usepackage{soul}
 
 \newcommand{\ignore}[1]{}
@@ -721,7 +721,8 @@ $M / \sim $ is then equipped with the \tb{final (finest) topology}\footnote{Thin
 }
     
     {\tiny
-    In particular, open subsets of $X$ that are not saturated have no impact on whether or not the function $f$ is a quotient map; non-saturated subsets are irrelevant to the definition of "quotient map" just as they are irrelevant to the open-set definition of continuity (because a function $f: X \rightarrow Y$ is continuous if and only if for every saturated subset $S$ of $X, f(S)$ being open in $f(X)$ implies $S$ is open in $X$ ). Indeed, if $\tau$ is a topology on $X$ and $f: X \rightarrow Y$ is any map then set $\tau_{f}$ of all $U \in \tau$ that are open saturated subsets of $X$ forms a topology on $X$. If $Y$ is also a topological space then $f:(X, \tau) \rightarrow Y$ is a quotient map (respectively, continuous) if and only if the same is true of $f:\left(X, \tau_{f}\right) \rightarrow Y$.} \tb{Continuous open surjection map} is therefore a quotient map.
+    In particular, open subsets of $X$ that are not saturated have no impact on whether or not the function $f$ is a quotient map; non-saturated subsets are irrelevant to the definition of "quotient map" just as they are irrelevant to the open-set definition of continuity (because a function $f: X \rightarrow Y$ is continuous if and only if for every saturated subset $S$ of $X, f(S)$ being open in $f(X)$ implies $S$ is open in $X$ ). Indeed, if $\tau$ is a topology on $X$ and $f: X \rightarrow Y$ is any map then set $\tau_{f}$ of all $U \in \tau$ that are open saturated subsets of $X$ forms a topology on $X$. If $Y$ is also a topological space then $f:(X, \tau) \rightarrow Y$ is a quotient map (respectively, continuous) if and only if the same is true of $f:\left(X, \tau_{f}\right) \rightarrow Y$.}
+    \item \tb{Continuous open surjection map} is therefore a special quotient map (note not all quotient maps are open). Homeomorphism which is continuous open surjective is of course one example.
     \item Every surjection induces an equivalence relation. Roughly speaking, if the surjection  is equipped with the final topology for $Y$, we get a quotient topology on $Y$. (Strictly speaking, we need to distinguish the singleton set and its unique element. See wiki.)
 \end{itemize}
 \item Example: let $\sim$ be the equivalence relation on $\mathbb{R}$ defined by:
